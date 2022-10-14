@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React,{ useState} from "react"
+import "./App.css"
+const App=()=>{
+const [city,setCity]=useState('')
+const [result,setResult]=useState('')
+ 
+
+   
+  const inputChange=(e)=>{
+  setCity(e.target.value)
+  
+  }
+  const formHandler=async(e)=>{
+    e.preventDefault()
+    setCity('')
+    const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d885aa1d783fd13a55050afeef620fcb`)
+    const data= await response.json()
+     
+     const cel=Math.round(data.main.temp-273.15)
+      setResult(`Temperature At ${data.name} -\t ${cel-1}ºC`)
+     
+  }
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div className="imgBack">  
+    <center> 
+      
+<h1>Weather App</h1>
+<form onSubmit={formHandler}>
+  <input type="text" name="city" value={city} 
+  placeholder="Enter the City Name" onChange={inputChange}/><br/>
+  <button type='submit'>Get Temperature</button>
+</form>
+<p className="final">{result}</p>
+ 
+    </center>
+    </div> 
+  )
 }
 
-export default App;
+export default App

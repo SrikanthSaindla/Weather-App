@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
+*{
+  margin: 0px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input{
+  min-width: 200px;
+  max-width: 500px;
+  height: 35px;
+  padding-left: 20px;
+  font-size: larger;
+  font-family: "Roboto";
+  margin-top: 20px;
+  border:transparent;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button{
+  background-color: blue;
+  min-width: 150px;
+  max-width: 200px;
+  color: bisque;
+  border-radius: 8px;
+  height: 30px;
+  margin-top: 20px;
+  border: none;
+  margin-bottom: 20px;
+  
+   
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.imgBack{
+  background-image: url("https://res.cloudinary.com/srikanth143/image/upload/v1665745257/frozen-201495_swtpiu.jpg");
+  height: 513px;
+   
+  width: 100vw;
+  background-size: cover;
+  padding-top: 200px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.final{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
